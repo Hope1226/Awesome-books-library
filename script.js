@@ -12,9 +12,12 @@ const library = (()=> {
   const addBook = (title, author) => {
     listOfBook.push({title: `${title}`, author: `${author}`});
   }
+
   const removeBook = index => {
     listOfBook.splice(index, 1);
   }
+
+  
 
   return {listOfBook, addBook, removeBook}
 })();
