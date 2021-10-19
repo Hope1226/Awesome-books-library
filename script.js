@@ -12,37 +12,38 @@ const library = (() => {
     listOfBook = [];
   } else {
     listOfBook = JSON.parse(localBooks);
-    for (let i=0;i<listOfBook.length; i +=1) {
-      //listOfBook = JSON.parse(window.localStorage.getItem('listOfBook'));
+    for (let i=0; i<listOfBook.length; i +=1) {
       listOfBooks.innerHTML += `
-      <div class="book"}>
-      <p class="bookAuthor">${listOfBook[i].author}</p>
+      <div class="book"}>  
       <h2 class="bookTitle">${listOfBook[i].title}</h2>
+      <p class="bookAuthor">${listOfBook[i].author}</p>
       <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${listOfBook[i].title}" class="removeBookBtn">Remove</button>
       </div>`
+
+      const removeBookBtns = document.querySelectorAll('.removeBookBtn');
+      removeBookBtns.forEach(button => {
+      button.addEventListener('click', ()=>{
+      library.removeBook(button.value);
+     })});
     }  
   }
-  //const listOfBook = [];
   const addBook = (title, author) => {
     listOfBook.push({title: `${title}`, author: `${author}`});
+    window.localStorage.setItem('localLibrary', JSON.stringify(listOfBook));
   }
 
   const removeBook = keyWord => {
     index = listOfBook.findIndex(x => x.title === keyWord)
     listOfBook.splice(index, 1);
+    updateStorage();
   }
 
-  const storeBook = () => {
-    window.localStorage.setItem('localLibrary', JSON.stringify(listOfBook));
+  const updateStorage = () => {
+    localStorage.clear();
+    localStorage.setItem('localLibrary', JSON.stringify(listOfBook));
   }
 
-  const removeStorage = () => {
-    let newLocalStorage = localBooks.filter(function(value, index, localBooks) {
-      return newLocalStorage;
-    })
-  }
-
-  return {listOfBook, addBook, removeBook, storeBook, removeStorage}
+  return {listOfBook, addBook, removeBook}
 })();
 
 form.addEventListener('submit', (event)=>{
@@ -58,10 +59,8 @@ form.addEventListener('submit', (event)=>{
   const removeBookBtns = document.querySelectorAll('.removeBookBtn');
   removeBookBtns.forEach(button => {
   button.addEventListener('click', ()=>{
-    library.removeBook(button.value);
+  library.removeBook(button.value);
   })});
-
-  library.storeBook();
   form.reset();
 });
 
