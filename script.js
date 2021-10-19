@@ -36,7 +36,13 @@ const library = (() => {
     window.localStorage.setItem('localLibrary', JSON.stringify(listOfBook));
   }
 
-  return {listOfBook, addBook, removeBook, storeBook}
+  const removeStorage = () => {
+    let newLocalStorage = localBooks.filter(function(value, index, localBooks) {
+      return newLocalStorage;
+    })
+  }
+
+  return {listOfBook, addBook, removeBook, storeBook, removeStorage}
 })();
 
 form.addEventListener('submit', (event)=>{
