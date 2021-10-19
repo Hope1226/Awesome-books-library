@@ -4,10 +4,25 @@ const addBookBtn = document.querySelector('#addBookBtn');
 const listOfBooks = document.querySelector('.books-list');
 const bookTitle = document.querySelector('#bookTitle');
 const bookAuthor = document.querySelector('#bookAuthor');
+const localBooks = localStorage.getItem('localLibrary');
 
-
-const library = (()=> {
-  const listOfBook = [];
+const library = (() => {
+  let listOfBook;
+  if (localBooks === null) {
+    listOfBook = [];
+  } else {
+    listOfBook = JSON.parse(localBooks);
+    for (let i=0;i<listOfBook.length; i +=1) {
+      //listOfBook = JSON.parse(window.localStorage.getItem('listOfBook'));
+      listOfBooks.innerHTML += `
+      <div class="book"}>
+      <p class="bookAuthor">${listOfBook[i].author}</p>
+      <h2 class="bookTitle">${listOfBook[i].title}</h2>
+      <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${listOfBook[i].title}" class="removeBookBtn">Remove</button>
+      </div>`
+    }  
+  }
+  //const listOfBook = [];
   const addBook = (title, author) => {
     listOfBook.push({title: `${title}`, author: `${author}`});
   }
@@ -17,8 +32,11 @@ const library = (()=> {
     listOfBook.splice(index, 1);
   }
 
+  const storeBook = () => {
+    window.localStorage.setItem('localLibrary', JSON.stringify(listOfBook));
+  }
 
-  return {listOfBook, addBook, removeBook}
+  return {listOfBook, addBook, removeBook, storeBook}
 })();
 
 form.addEventListener('submit', (event)=>{
@@ -29,7 +47,7 @@ form.addEventListener('submit', (event)=>{
     <h2 class="bookTitle">${library.listOfBook[library.listOfBook.length - 1].title}</h2>
     <p class="bookAuthor">${library.listOfBook[library.listOfBook.length - 1].author}</p>
     <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${library.listOfBook[library.listOfBook.length - 1].title}" class="removeBookBtn">Remove</button>
-  </div>`
+  </div>`;
 
   const removeBookBtns = document.querySelectorAll('.removeBookBtn');
   removeBookBtns.forEach(button => {
@@ -37,7 +55,7 @@ form.addEventListener('submit', (event)=>{
     library.removeBook(button.value);
   })});
 
-
+  library.storeBook();
   form.reset();
 });
 
