@@ -1,65 +1,46 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+Awesome Books
 
-> One paragraph statement about the project.
+> JS Library Collection.
 
-![screenshot](./app_screenshot.png)
+![screenshot](/assets/ssAwesomeBooks.png)
 
-Additional description about the project and its features.
+- For this project we:
+- Created a plain index.html with a form to storage books.
+- You can added any book that you want and keep it in the local storage.
+- You can delete each book that you want.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML & JS
+- Visual Studio Code
+- Linters
 
-## Live Demo
+## Authors 👤
 
-[Live Demo Link](https://livedemo.com)
+👤 **Umidjon Ustabaev**
 
+- GitHub: [@githubhandle](https://github.com/Hope1226)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/umidjon-ustabaev-03b92b11a/)
 
-## Getting Started
+👤 **Alejandro Ramos**
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+- GitHub: [@githubhandle](https://github.com/AlexRS90)
+- Twitter: [@twitterhandle](https://twitter.com/AlejandroRBenji)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/alejandro-ramos-santos-9b0b52135/)
 
+👤 **Bbosa Muhamood**
 
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Github: [@bmuhamood](https://github.com/bmuhamood)
+- Twitter: [@croixtechfirm](https://twitter.com/croixtechfirm)
+- Linkedin: [linkedin](https://www.linkedin.com/in/bbosa-muhamood-06845576/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Hope1226/Awesome-books-library/issues).
 
 ## Show your support
 
