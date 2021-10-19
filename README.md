@@ -17,10 +17,6 @@ Awesome Books
 - Visual Studio Code
 - Linters
 
-## Live Demo 🖥️ 💻 📱
-
-https://alexrs90.github.io/personalBrand-capstone1/
-
 ## Authors 👤
 
 👤 **Umidjon Ustabaev**
