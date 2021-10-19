@@ -1,6 +1,4 @@
-
 const form = document.querySelector('form');
-const addBookBtn = document.querySelector('#addBookBtn');
 const listOfBooks = document.querySelector('.books-list');
 const bookTitle = document.querySelector('#bookTitle');
 const bookAuthor = document.querySelector('#bookAuthor');
@@ -12,43 +10,44 @@ const library = (() => {
     listOfBook = [];
   } else {
     listOfBook = JSON.parse(localBooks);
-    for (let i=0; i<listOfBook.length; i +=1) {
+    for (let i = 0; i < listOfBook.length; i += 1) {
       listOfBooks.innerHTML += `
       <div class="book"}>  
       <h2 class="bookTitle">${listOfBook[i].title}</h2>
       <p class="bookAuthor">${listOfBook[i].author}</p>
       <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${listOfBook[i].title}" class="removeBookBtn">Remove</button>
-      </div>`
+      </div>`;
 
       const removeBookBtns = document.querySelectorAll('.removeBookBtn');
-      removeBookBtns.forEach(button => {
-      button.addEventListener('click', ()=>{
-      library.removeBook(button.value);
-     })});
-    }  
+      removeBookBtns.forEach((button) => {
+        button.addEventListener('click', () => {
+          library.removeBook(button.value);
+        });
+      });
+    }
   }
   const addBook = (title, author) => {
-    listOfBook.push({title: `${title}`, author: `${author}`});
+    listOfBook.push({ title: `${title}`, author: `${author}` });
     window.localStorage.setItem('localLibrary', JSON.stringify(listOfBook));
-  }
-
-  const removeBook = keyWord => {
-    index = listOfBook.findIndex(x => x.title === keyWord)
-    listOfBook.splice(index, 1);
-    updateStorage();
-  }
+  };
 
   const updateStorage = () => {
     localStorage.clear();
     localStorage.setItem('localLibrary', JSON.stringify(listOfBook));
-  }
+  };
 
-  return {listOfBook, addBook, removeBook}
+  const removeBook = (keyWord) => {
+    const index = listOfBook.findIndex((x) => x.title === keyWord);
+    listOfBook.splice(index, 1);
+    updateStorage();
+  };
+
+  return { listOfBook, addBook, removeBook };
 })();
 
-form.addEventListener('submit', (event)=>{
+form.addEventListener('submit', (event) => {
   event.preventDefault();
-  library.addBook(bookTitle.value, bookAuthor.value);  
+  library.addBook(bookTitle.value, bookAuthor.value);
   listOfBooks.innerHTML += `
   <div class="book"}>
     <h2 class="bookTitle">${library.listOfBook[library.listOfBook.length - 1].title}</h2>
@@ -57,17 +56,10 @@ form.addEventListener('submit', (event)=>{
   </div>`;
 
   const removeBookBtns = document.querySelectorAll('.removeBookBtn');
-  removeBookBtns.forEach(button => {
-  button.addEventListener('click', ()=>{
-  library.removeBook(button.value);
-  })});
+  removeBookBtns.forEach((button) => {
+    button.addEventListener('click', () => {
+      library.removeBook(button.value);
+    });
+  });
   form.reset();
 });
-
-
-
-
-
-
-
-
