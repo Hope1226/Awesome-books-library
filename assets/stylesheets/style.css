@@ -64,11 +64,11 @@ body {
 }
 
 .library-container .library-control {
-  justify-self: center;
   display: grid;
   grid-template-rows: auto 1fr;
   grid-gap: 20px;
-}
+  padding: 0 500px;
+} 
 
 .library-container .library-control h2 {
   text-align: center;
@@ -82,10 +82,15 @@ body {
 }
 
 .library-container form {
+  justify-self: stretch;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, auto);
   grid-gap: 20px;
+}
+
+.library-container form input {
+  padding: 10px;
 }
 
 .library-container form button {
@@ -105,11 +110,11 @@ body {
   padding: 10px;
   font-size: 18px;
   cursor: pointer;
-  transition: all 0.4s;
+  transition-duration: 0.4s;
+  font-family: 'Poppins', sans-serif;
 }
 
 .master:hover {
   background-color: #848884;
   color: black;
-  border: 2px solid red;
 }
