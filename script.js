@@ -5,12 +5,12 @@ const bookAuthor = document.querySelector('#bookAuthor');
 const localBooks = localStorage.getItem('localLibrary');
 
 class Library {
-  constructor (name, listOfBook) {
+  constructor(name, listOfBook) {
     this.name = name;
     this.listOfBook = listOfBook;
   }
-  
-  setLocalInfo () {
+
+  setLocalInfo() {
     if (localBooks === null) {
       this.listOfBook = [];
     } else {
@@ -26,7 +26,7 @@ class Library {
         const removeBookBtns = document.querySelectorAll('.removeBookBtn');
         removeBookBtns.forEach((button) => {
           button.addEventListener('click', () => {
-          this.removeBook(button.value);
+            this.removeBook(button.value);
           });
         });
       }
@@ -48,11 +48,10 @@ class Library {
     this.listOfBook.splice(index, 1);
     this.updateStorage();
   };
-};
+}
 
 const lib1 = new Library('testLibrary', []);
 lib1.setLocalInfo();
-
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
