@@ -18,8 +18,8 @@ class Library {
       for (let i = 0; i < this.listOfBook.length; i += 1) {
         listOfBooks.innerHTML += `
         <div class="book">  
-        <h2 class="bookTitle">${this.listOfBook[i].title}</h2>
-        <p class="bookAuthor">${this.listOfBook[i].author}</p>
+        <h2 class="bookTitle text-color">"${this.listOfBook[i].title}" by </h2>
+        <p class="bookAuthor text-color">${this.listOfBook[i].author}</p>
         <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${this.listOfBook[i].title}" class="removeBookBtn">Remove</button>
         </div>`;
 
@@ -58,8 +58,8 @@ form.addEventListener('submit', (event) => {
   lib1.addBook(bookTitle.value, bookAuthor.value);
   listOfBooks.innerHTML += `
   <div class="book">
-    <h2 class="bookTitle">${lib1.listOfBook[lib1.listOfBook.length - 1].title}</h2>
-    <p class="bookAuthor">${lib1.listOfBook[lib1.listOfBook.length - 1].author}</p>
+    <h2 class="bookTitle text-color">"${lib1.listOfBook[lib1.listOfBook.length - 1].title}" by </h2>
+    <p class="bookAuthor text-color">${lib1.listOfBook[lib1.listOfBook.length - 1].author}</p>
     <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${lib1.listOfBook[lib1.listOfBook.length - 1].title}" class="removeBookBtn">Remove</button>
   </div>`;
 

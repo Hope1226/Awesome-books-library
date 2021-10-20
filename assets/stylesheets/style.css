@@ -42,6 +42,14 @@ body {
   flex-direction: column;
 }
 
+.book:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
+.book:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
 .book {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -49,7 +57,6 @@ body {
   align-items: center;
   grid-gap: 20px;
   border-bottom: 1px solid black;
-
 }
 
 .book .bookAuthor {
@@ -74,7 +81,6 @@ body {
   justify-self: center;
 }
 
-
 .library-container form {
   display: grid;
   grid-template-columns: 1fr;
@@ -82,7 +88,11 @@ body {
   grid-gap: 20px;
 }
 
-
 .library-container form button {
   justify-self: end;
+}
+
+.text-color {
+  font-family: 'Poppins', sans-serif;
+  color: #000;
 }
