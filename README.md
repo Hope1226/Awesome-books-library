@@ -11,6 +11,7 @@ In this Project, We refactor the code and used JavaScript Classes instead of Mod
 - Created a plain index.html with a form to storage books.
 - You can added any book that you want and keep it in the local storage.
 - You can delete each book that you want.
+- For this milestone we added css styling to the whole project.
 
 ## Built With
 
