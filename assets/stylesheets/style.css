@@ -96,3 +96,20 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #000;
 }
+
+.master {
+  background-color: #161515;
+  border: none;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.master:hover {
+  background-color: #848884;
+  color: black;
+  border: 2px solid red;
+}
