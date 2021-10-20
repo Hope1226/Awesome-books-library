@@ -1,6 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Awesome Books
+## Awesome Books
+In this Project, We refactor the code and used JavaScript Classes instead of Models and Arrays. 
 
 > JS Library Collection.
 
