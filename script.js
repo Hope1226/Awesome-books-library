@@ -4,61 +4,69 @@ const bookTitle = document.querySelector('#bookTitle');
 const bookAuthor = document.querySelector('#bookAuthor');
 const localBooks = localStorage.getItem('localLibrary');
 
-const library = (() => {
-  let listOfBook;
-  if (localBooks === null) {
-    listOfBook = [];
-  } else {
-    listOfBook = JSON.parse(localBooks);
-    for (let i = 0; i < listOfBook.length; i += 1) {
-      listOfBooks.innerHTML += `
-      <div class="book"}>  
-      <h2 class="bookTitle">${listOfBook[i].title}</h2>
-      <p class="bookAuthor">${listOfBook[i].author}</p>
-      <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${listOfBook[i].title}" class="removeBookBtn">Remove</button>
-      </div>`;
+class Library {
+  constructor(name, listOfBook) {
+    this.name = name;
+    this.listOfBook = listOfBook;
+  }
 
-      const removeBookBtns = document.querySelectorAll('.removeBookBtn');
-      removeBookBtns.forEach((button) => {
-        button.addEventListener('click', () => {
-          library.removeBook(button.value);
+  setLocalInfo() {
+    if (localBooks === null) {
+      this.listOfBook = [];
+    } else {
+      this.listOfBook = JSON.parse(localBooks);
+      for (let i = 0; i < this.listOfBook.length; i += 1) {
+        listOfBooks.innerHTML += `
+        <div class="book"}>  
+        <h2 class="bookTitle">${this.listOfBook[i].title}</h2>
+        <p class="bookAuthor">${this.listOfBook[i].author}</p>
+        <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${this.listOfBook[i].title}" class="removeBookBtn">Remove</button>
+        </div>`;
+
+        const removeBookBtns = document.querySelectorAll('.removeBookBtn');
+        removeBookBtns.forEach((button) => {
+          button.addEventListener('click', () => {
+            this.removeBook(button.value);
+          });
         });
-      });
+      }
     }
   }
-  const addBook = (title, author) => {
-    listOfBook.push({ title: `${title}`, author: `${author}` });
-    window.localStorage.setItem('localLibrary', JSON.stringify(listOfBook));
+
+  addBook = (title, author) => {
+    this.listOfBook.push({ title: `${title}`, author: `${author}` });
+    window.localStorage.setItem('localLibrary', JSON.stringify(this.listOfBook));
   };
 
-  const updateStorage = () => {
+  updateStorage = () => {
     localStorage.clear();
-    localStorage.setItem('localLibrary', JSON.stringify(listOfBook));
+    localStorage.setItem('localLibrary', JSON.stringify(this.listOfBook));
   };
 
-  const removeBook = (keyWord) => {
-    const index = listOfBook.findIndex((x) => x.title === keyWord);
-    listOfBook.splice(index, 1);
-    updateStorage();
+  removeBook = (keyWord) => {
+    const index = this.listOfBook.findIndex((x) => x.title === keyWord);
+    this.listOfBook.splice(index, 1);
+    this.updateStorage();
   };
+}
 
-  return { listOfBook, addBook, removeBook };
-})();
+const lib1 = new Library('testLibrary', []);
+lib1.setLocalInfo();
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  library.addBook(bookTitle.value, bookAuthor.value);
+  lib1.addBook(bookTitle.value, bookAuthor.value);
   listOfBooks.innerHTML += `
   <div class="book"}>
-    <h2 class="bookTitle">${library.listOfBook[library.listOfBook.length - 1].title}</h2>
-    <p class="bookAuthor">${library.listOfBook[library.listOfBook.length - 1].author}</p>
-    <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${library.listOfBook[library.listOfBook.length - 1].title}" class="removeBookBtn">Remove</button>
+    <h2 class="bookTitle">${lib1.listOfBook[lib1.listOfBook.length - 1].title}</h2>
+    <p class="bookAuthor">${lib1.listOfBook[lib1.listOfBook.length - 1].author}</p>
+    <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${lib1.listOfBook[lib1.listOfBook.length - 1].title}" class="removeBookBtn">Remove</button>
   </div>`;
 
   const removeBookBtns = document.querySelectorAll('.removeBookBtn');
   removeBookBtns.forEach((button) => {
     button.addEventListener('click', () => {
-      library.removeBook(button.value);
+      lib1.removeBook(button.value);
     });
   });
   form.reset();
