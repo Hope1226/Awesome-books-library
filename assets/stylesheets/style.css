@@ -25,8 +25,45 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.heading {
-  text-align: center;
+.d-flex {
+  display: flex;
+}
+
+.main-nav {
+  justify-content: space-between;
+  border: solid 2px #000;
+  align-items: baseline;
+  padding-left: 5px;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+.nav-list {
+  list-style: none;
+  font-size: 20px;
+  justify-content: space-between;
+  flex-basis: 30%;
+}
+
+.nav-list li {
+  border-right: solid 2px #000;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  /* text-align: center; */
+  padding: 15px;
+  color: #000;
+  display: block;
+}
+
+.time-nav {
+  justify-content: end;
+  font-size: 20px;
 }
 
 .library-container {
