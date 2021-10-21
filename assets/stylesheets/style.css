@@ -62,7 +62,7 @@ header {
   list-style: none;
   font-size: 20px;
   justify-content: center;
-  flex-basis: 25%;
+  flex-basis: 35%;
 }
 
 .nav-list li {
@@ -140,6 +140,7 @@ header {
 
 .library-control h2 {
   text-align: center;
+  font-size: 40px;
 }
 
 .library-control  form {
