@@ -177,3 +177,34 @@ header {
   background-color: #848884;
   color: black;
 }
+
+.contact-info {
+  font-size: medium;
+}
+
+.contact-list {
+  align-items: center;
+  left: 50%;
+}
+
+.contact {
+  justify-self: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 60%;
+  width: 600px;
+}
+
+.contact-info {
+  /* margin-top: 20px; */
+  font-size: 20px;
+  padding-top: 20px;
+  line-height: 30px;
+}
+
+.contact-list {
+  margin-top: 20px;
+  padding: 20px 30px;
+  line-height: 30px;
+}
