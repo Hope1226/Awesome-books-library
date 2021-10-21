@@ -19,10 +19,11 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
-  align-items: center;
+  align-items: start;
+  justify-items: center;
   grid-gap: 20px;
   font-family: 'Poppins', sans-serif;
-  padding-top: 200px;
+  padding: 200px 20px 0 20px;
 }
 
 header {
@@ -92,7 +93,7 @@ header {
 }
 
 .library-container {
-  align-self: start;
+  justify-self: stretch;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 2fr auto 1fr;
@@ -106,8 +107,11 @@ header {
 
 .library-container .books-list {
   border: 1px solid black;
-  display: flex;
   flex-direction: column;
+  height: 500px;
+  background: #02020246;
+  display: flex;
+  overflow-y: scroll;
 }
 
 .book {
@@ -132,14 +136,16 @@ header {
 }
 
 .library-control {
+  justify-self: stretch;
   display: none;
   grid-template-rows: auto 1fr;
   grid-gap: 20px;
   padding: 0 500px;
 }
 
-.library-control h2 {
+.library-control h1 {
   text-align: center;
+  font-size: 40px;
 }
 
 .library-control  form {
@@ -193,9 +199,9 @@ header {
 
 .contact {
   display: none;
-  justify-self: center;
-  flex-direction: column;
-  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
   align-items: center;
   max-width: 60%;
   width: 600px;
@@ -214,6 +220,10 @@ header {
 }
 
 .footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #000;
   color: #fff;
   font-size: 20px;
