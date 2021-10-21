@@ -19,10 +19,19 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  padding: 20px;
   align-items: center;
   grid-gap: 20px;
   font-family: 'Poppins', sans-serif;
+  padding: 200px 20px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  border-bottom: 1px solid black;
 }
 
 .d-flex {
@@ -31,39 +40,53 @@ body {
 
 .main-nav {
   justify-content: space-between;
-  border: solid 2px #000;
+  padding: 20px;
   align-items: baseline;
-  padding-left: 5px;
+  
 }
 
 .logo {
   font-size: 30px;
+                        
+}
+
+
+.nav-text {
+  color: white;
+  font-weight: 900;  
 }
 
 .nav-list {
   list-style: none;
   font-size: 20px;
-  justify-content: space-between;
-  flex-basis: 30%;
+  justify-content: center;
+  flex-basis: 25%;
 }
 
 .nav-list li {
-  border-right: solid 2px #000;
+  border-right: solid 1px white;
   justify-content: center;
   align-items: center;
+  flex: 1;
+}
+
+.nav-list li:last-child {
+  border: none;
 }
 
 .nav-list li a {
   text-decoration: none;
-  /* text-align: center; */
   padding: 15px;
-  color: #000;
+  color: white;
+  font-weight: 400;  
   display: block;
 }
 
 .time-nav {
   justify-content: end;
   font-size: 20px;
+  background: white;
+  padding: 0 20px;
 }
 
 .library-container {
