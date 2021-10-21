@@ -15,14 +15,13 @@ html {
 }
 
 body {
-  height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   align-items: center;
   grid-gap: 20px;
   font-family: 'Poppins', sans-serif;
-  padding: 200px 20px;
+  padding-top: 200px;
 }
 
 header {
@@ -49,7 +48,6 @@ header {
   font-size: 30px;
                         
 }
-
 
 .nav-text {
   color: white;
@@ -95,6 +93,11 @@ header {
   grid-template-columns: 1fr;
   grid-template-rows: 2fr auto 1fr;
   grid-gap: 20px;
+}
+
+.library-container h1 {
+  text-align: center;
+  font-size: 40px;
 }
 
 .library-container .books-list {
@@ -187,6 +190,10 @@ header {
   left: 50%;
 }
 
+.contact-header {
+  font-size: 40px;
+}
+
 .contact {
   justify-self: center;
   flex-direction: column;
@@ -197,9 +204,8 @@ header {
 }
 
 .contact-info {
-  /* margin-top: 20px; */
   font-size: 20px;
-  padding-top: 20px;
+  padding-top: 40px;
   line-height: 30px;
 }
 
@@ -207,4 +213,11 @@ header {
   margin-top: 20px;
   padding: 20px 30px;
   line-height: 30px;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  padding: 20px 15px;
 }
