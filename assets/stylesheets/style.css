@@ -51,12 +51,11 @@ header {
 
 .logo {
   font-size: 30px;
-                        
 }
 
 .nav-text {
   color: white;
-  font-weight: 900;  
+  font-weight: 900;
 }
 
 .nav-list {
@@ -81,7 +80,7 @@ header {
   text-decoration: none;
   padding: 15px;
   color: white;
-  font-weight: 400;  
+  font-weight: 400;
   display: block;
 }
 
@@ -148,7 +147,7 @@ header {
   font-size: 40px;
 }
 
-.library-control  form {
+.library-control form {
   justify-self: stretch;
   display: grid;
   grid-template-columns: 1fr;
@@ -156,7 +155,7 @@ header {
   grid-gap: 20px;
 }
 
-.library-control  form input {
+.library-control form input {
   padding: 10px;
 }
 
@@ -184,15 +183,6 @@ header {
   color: black;
 }
 
-.contact-info {
-  font-size: medium;
-}
-
-.contact-list {
-  align-items: center;
-  left: 50%;
-}
-
 .contact-header {
   font-size: 40px;
 }
@@ -217,6 +207,8 @@ header {
   margin-top: 20px;
   padding: 20px 30px;
   line-height: 30px;
+  align-items: center;
+  left: 50%;
 }
 
 .footer {
