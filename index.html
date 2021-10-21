@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/stylesheets/style.css">
-  <script src="script.js" defer></script>
+  <script src="script/script.js" defer></script>
+  <script src="script/navbar.js" defer></script>
   <title>Awesome books library</title>
 </head>
 <body>
@@ -14,9 +15,9 @@
       <div class="main-nav d-flex">
         <p class="logo nav-text">Awesome Books</p>
         <ul class="nav-list d-flex nav-text">
-          <li class="d-flex"><a href="#">List</a></li>
-          <li class="d-flex"><a href="#">Add new</a></li>
-          <li class="d-flex"><a href="#">Contact</a></li>
+          <li class="d-flex"><a href="#" id="listNav">List</a></li>
+          <li class="d-flex"><a href="#" id="addNav">Add new</a></li>
+          <li class="d-flex"><a href="#" id="contactNav">Contact</a></li>
         </ul>
       </div>
       <div class="time-nav d-flex text-color">
@@ -24,20 +25,21 @@
       </div>
     </nav>
   </header>
-  <section class="library-container">
+  <section class="library-container" id="listSection">
     <h1>All awesome books</h1>
     <div class="books-list"></div>
-    <div class="line"></div>
-    <div class="library-control">
-      <h2 class="text-color">Add book</h2>
-      <form>
-        <input type="text" class="text-color" name="bookTitle" id="bookTitle" placeholder="Title" required>
-        <input type="text" class="text-color" name="bookAuthor" id='bookAuthor' placeholder="Author" required>
-        <button type="submit" class="master master-button" id="addBookBtn">Add Book</button>
-      </form>
-    </div>
   </section>
-  <section class="contact">
+
+  <section class="library-control" id="addBookSection">
+    <h2 class="text-color">Add book</h2>
+    <form>
+      <input type="text" class="text-color" name="bookTitle" id="bookTitle" placeholder="Title" required>
+      <input type="text" class="text-color" name="bookAuthor" id='bookAuthor' placeholder="Author" required>
+      <button type="submit" class="master master-button" id="addBookBtn">Add Book</button>
+    </form>
+  </section> 
+
+  <section class="contact" id="contacts">
     <h2 class="text-color contact-header">Contact Information</h2>
     <div>
       <p class="contact-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 

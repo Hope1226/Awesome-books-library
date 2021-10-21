@@ -15,9 +15,10 @@ html {
 }
 
 body {
+  height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr auto;
   align-items: center;
   grid-gap: 20px;
   font-family: 'Poppins', sans-serif;
@@ -41,7 +42,10 @@ header {
   justify-content: space-between;
   padding: 20px;
   align-items: baseline;
-  
+}
+
+#listNav {
+  color: grey;
 }
 
 .logo {
@@ -127,25 +131,18 @@ header {
   justify-self: start;
 }
 
-.library-container .library-control {
-  display: grid;
+.library-control {
+  display: none;
   grid-template-rows: auto 1fr;
   grid-gap: 20px;
   padding: 0 500px;
 }
 
-.library-container .library-control h2 {
+.library-control h2 {
   text-align: center;
 }
 
-.line {
-  width: 5%;
-  height: 2px;
-  background: black;
-  justify-self: center;
-}
-
-.library-container form {
+.library-control  form {
   justify-self: stretch;
   display: grid;
   grid-template-columns: 1fr;
@@ -153,11 +150,11 @@ header {
   grid-gap: 20px;
 }
 
-.library-container form input {
+.library-control  form input {
   padding: 10px;
 }
 
-.library-container form button {
+.library-control form button {
   justify-self: end;
 }
 
@@ -195,6 +192,7 @@ header {
 }
 
 .contact {
+  display: none;
   justify-self: center;
   flex-direction: column;
   justify-content: center;
@@ -220,4 +218,12 @@ header {
   color: #fff;
   font-size: 20px;
   padding: 20px 15px;
+}
+
+.open {
+  display: grid;
+}
+
+.closed {
+  display: none;
 }
