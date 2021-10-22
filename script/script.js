@@ -22,7 +22,6 @@ class Library {
         <p class="bookAuthor text-color">${this.listOfBook[i].author}</p>
         <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${this.listOfBook[i].title}" class="removeBookBtn master master-button">Remove</button>
         </div>`;
-
         const removeBookBtns = document.querySelectorAll('.removeBookBtn');
         removeBookBtns.forEach((button) => {
           button.addEventListener('click', () => {
@@ -62,12 +61,12 @@ form.addEventListener('submit', (event) => {
     <p class="bookAuthor text-color">${lib1.listOfBook[lib1.listOfBook.length - 1].author}</p>
     <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode)" value="${lib1.listOfBook[lib1.listOfBook.length - 1].title}" class="removeBookBtn master master-button">Remove</button>
   </div>`;
-
   const removeBookBtns = document.querySelectorAll('.removeBookBtn');
   removeBookBtns.forEach((button) => {
     button.addEventListener('click', () => {
       lib1.removeBook(button.value);
     });
   });
+
   form.reset();
 });
